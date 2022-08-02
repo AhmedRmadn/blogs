@@ -10,7 +10,7 @@
     <h1>{{$post ->title}} </h1>
     <p> {{$post -> body}}</p>
     <button><a href="http://127.0.0.1:8000/update/{{$post->id}}"> update</a></button>
-    <button><a href="http://127.0.0.1:8000/{{$post->id}}"> delete</a></button>
+    <button><a href="http://127.0.0.1:8000/delete/{{$post->id}}"> delete</a></button>
     
 </body>
 </html>

@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Models\Post;
 use App\Http\Controllers\updatePost;
+use App\Http\Controllers\deletePostController;
+use App\Http\Controllers\createPostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +23,7 @@ Route::get('/', function () {
 });
 
 
-Route::get('/{post}', function ($id) {
+Route::get('show/{post}', function ($id) {
     
     return view('post',["post"=> Post::find($id)]);
 });
@@ -31,4 +33,11 @@ Route::get('/update/{post}', function ($id) {
     return view('update',["post"=> Post::find($id)]);
 });
 
-Route::post('/action',[updatePost:: class , 'getUpdatedData']);
+Route::get('/create', function () {
+    
+    return view('createPost');
+});
+
+Route::post('/action/{id}',[updatePost:: class , 'getUpdatedData']);
+Route::post('/create',[createPostController:: class , 'createPost']);
+Route::get('/delete/{id}',[deletePostController:: class , 'deletePost']);
