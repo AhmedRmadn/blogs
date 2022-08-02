@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Post;
+use App\Http\Controllers\updatePost;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +16,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    
+    return view('posts',["posts" => Post::all()]);
 });
+
+
+Route::get('/{post}', function ($id) {
+    
+    return view('post',["post"=> Post::find($id)]);
+});
+
+Route::get('/update/{post}', function ($id) {
+    
+    return view('update',["post"=> Post::find($id)]);
+});
+
+Route::post('/action',[updatePost:: class , 'getUpdatedData']);
