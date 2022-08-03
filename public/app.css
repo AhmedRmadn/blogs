@@ -1,0 +1,36 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+  }
+
+  .hero{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(199, 174, 158);;
+  }
+  .hero form{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    width: 50%;
+
+  }
+
+  .hero button{
+    margin-left: 25%;
+    width: 30%;
+    height: 3%;
+    margin-top: 20px;
+    padding: 10px 30px; 
+    border-radius: 20px;
+    background-color: #fff;
+    color: rgb(100, 100, 100);
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: bold;
+
+    cursor: pointer;
+    border: none;
+  }

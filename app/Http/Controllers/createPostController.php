@@ -8,11 +8,29 @@ use App\Models\Post;
 class createPostController extends Controller
 {
     function createPost(Request $req){
+        
         $post = new Post ;
-        $post->title = $req->title;
-        $post->body = $req->body;
-        $post->image = $req->image;
-        $post->save();
-        return "sucess";
+        if($post){
+            
+            if($req->title){
+                $post->title = $req->title;
+            }
+
+            if($req->body){
+                 $post->body = $req->body;
+             }
+             if($req->image){
+                $post->image = $req->image;
+             }
+            
+
+            $post->save();
+            return response()->json(200);
+
+        }
+        else{
+            return response()->json(404);
+            
+        }
     }
 }

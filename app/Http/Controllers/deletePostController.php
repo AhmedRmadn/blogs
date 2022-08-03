@@ -9,12 +9,16 @@ class deletePostController extends Controller
 {
     function deletePost($id){
         $post = Post::find($id);
+
         if($post){
-         $post->delete();
-        return "sucess";
+            $post->delete();
+            return response()->json(200);
+
         }
         else{
-            return "fail";
+            return response()->json(404);
+            
         }
+
     }
 }

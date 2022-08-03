@@ -10,15 +10,24 @@ class updatePost extends Controller
     function getUpdatedData(Request $req,$id){
         $post = Post::find($id);
         if($post){
-            $post->title = $req->title;
-            $post->body = $req->body;
-            $post->image = $req->image;
+
+            if($req->title){
+                $post->title = $req->title;
+            }
+            if($req->body){
+                 $post->body = $req->body;
+             }
+             if($req->image){
+                $post->image = $req->image;
+             }
+            
             $post->save();
-            return "sucess";
+            return response()->json(200);
 
         }
         else{
-            return "Fail";
+            return response()->json(404);
+            
         }
     }
 }

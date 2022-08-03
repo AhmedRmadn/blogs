@@ -5,7 +5,7 @@ use App\Models\Post;
 use App\Http\Controllers\updatePost;
 use App\Http\Controllers\deletePostController;
 use App\Http\Controllers\createPostController;
-
+use App\Http\Controllers\imageController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,27 +17,6 @@ use App\Http\Controllers\createPostController;
 |
 */
 
-Route::get('/', function () {
-    
-    return view('posts',["posts" => Post::all()]);
-});
 
 
-Route::get('show/{post}', function ($id) {
-    
-    return view('post',["post"=> Post::find($id)]);
-});
 
-Route::get('/update/{post}', function ($id) {
-    
-    return view('update',["post"=> Post::find($id)]);
-});
-
-Route::get('/create', function () {
-    
-    return view('createPost');
-});
-
-Route::post('/action/{id}',[updatePost:: class , 'getUpdatedData']);
-Route::post('/create',[createPostController:: class , 'createPost']);
-Route::get('/delete/{id}',[deletePostController:: class , 'deletePost']);
