@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class authenticationController extends Controller
 
@@ -16,14 +17,9 @@ class authenticationController extends Controller
             'email' => 'required|email|max:255|unique:users,email',
             'password' => 'required',
         ]);
-        // $user = new User;
 
-        // $user -> name = $request->name;
-        // $user -> email = $request->email;
-        // $user -> password = $request->password;
-
-        // $user.save(); 
         $user = User::create($attributes);
+        $user['token'] =  $user->createToken('blog')->plainTextToken;
         auth()->login($user);
  
         return response()->json(["user" => $user]);
@@ -36,15 +32,15 @@ class authenticationController extends Controller
             'password' => 'required'
         ]);
 
-        if (! auth()->attempt($attributes)) {
-            return response()->json("faild");
-
-        }
-
-        session()->regenerate();
-
-        return response()->json(["user" => auth()->user()]);
-
+        if(Auth::attempt(['email' => $request->email, 'password' => $request->password])){ 
+            $user = User::where('email', $request->email)->first(); 
+            $user['token'] =  $user->createToken('blog')->plainTextToken; 
+   
+            return response()->json(['user' => $user], 200);
+        } 
+        else{ 
+            return response()->json('Unauthorised.', ['error'=>'Unauthorised']);
+        } 
     }
 
     function logout(){

@@ -8,6 +8,7 @@ use App\Http\Controllers\deletePostController;
 use App\Http\Controllers\createPostController;
 use App\Http\Controllers\imageController;
 use App\Http\Controllers\authenticationController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +22,7 @@ use App\Http\Controllers\authenticationController;
 */
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+    return auth()->user();
 });
 
 Route::get('/', function (Request $request) {
