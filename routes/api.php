@@ -7,6 +7,7 @@ use App\Http\Controllers\updatePost;
 use App\Http\Controllers\deletePostController;
 use App\Http\Controllers\createPostController;
 use App\Http\Controllers\imageController;
+use App\Http\Controllers\authenticationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +41,13 @@ Route::get('show/{post}', function (Request $request,$id) {
 Route::post('/update/{id}',[updatePost:: class , 'getUpdatedData']);
 Route::post('/create',[createPostController:: class , 'createPost']);
 Route::get('/delete/{id}',[deletePostController:: class , 'deletePost']);
+
+
+Route::post('register', [authenticationController::class, 'register'])->middleware('guest');
+
+Route::post('login', [authenticationController::class, 'login'])->middleware('guest');
+
+Route::post('logout', [authenticationController::class, 'logout'])->middleware('auth');
 
 
 
