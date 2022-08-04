@@ -21,8 +21,8 @@ class authenticationController extends Controller
         $user = User::create($attributes);
         $user['token'] =  $user->createToken('blog')->plainTextToken;
         auth()->login($user);
- 
-        return response()->json(["user" => $user]);
+        return auth()->user();
+        //return response()->json(["user" => $user]);
     }
 
     function login(Request $request){

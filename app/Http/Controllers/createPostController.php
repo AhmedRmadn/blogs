@@ -9,6 +9,12 @@ use Illuminate\Support\Facades\Auth;
 class createPostController extends Controller
 {
     function createPost(Request $req){
+
+
+        return auth()->user();
+        if(auth()->guest()){
+            return response()->json(401);
+        }
         
         $post = new Post ;
         if($post){
@@ -26,7 +32,6 @@ class createPostController extends Controller
 
             $post->user_id = Auth::user()->id;
             
-
             $post->save();
             return response()->json(200);
 
