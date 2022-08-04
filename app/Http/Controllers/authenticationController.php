@@ -25,8 +25,8 @@ class authenticationController extends Controller
         // $user.save(); 
         $user = User::create($attributes);
         auth()->login($user);
- 
-        return response()->json(["user" => $user]);
+        return auth()->user();
+        //return response()->json(["user" => $user]);
     }
 
     function login(Request $request){
