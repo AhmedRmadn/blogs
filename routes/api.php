@@ -9,7 +9,7 @@ use App\Http\Controllers\createPostController;
 use App\Http\Controllers\imageController;
 use App\Http\Controllers\authenticationController;
 use Illuminate\Support\Facades\Auth;
-
+use App\Http\Controllers\PostController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -22,33 +22,38 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return auth()->user();
+    return auth()->user()->posts;
 });
 
 Route::get('/', function (Request $request) {
     return response()->json([
-        'Posts' => Post::all(),
+        'posts' => Post::all(),
     ],200);
 
 });
 Route::get('show/{post}', function (Request $request,$id) {
     return response()->json([
-        'Post' => Post::find($id),
+        'post' => Post::find($id),
     ],200);
 });
 
 
 
-Route::post('/update/{id}',[updatePost:: class , 'getUpdatedData']);
-Route::post('/create',[createPostController:: class , 'createPost']);
-Route::get('/delete/{id}',[deletePostController:: class , 'deletePost']);
+
+Route::post('/update/{id}',[PostController:: class , 'updatePost'])->middleware('auth:sanctum');
+Route::post('/create',[PostController:: class , 'createPost'])->middleware('auth:sanctum');
+Route::post('/delete/{id}',[PostController:: class , 'deletePost'])->middleware('auth:sanctum');
 
 
 Route::post('register', [authenticationController::class, 'register'])->middleware('guest');
 
 Route::post('login', [authenticationController::class, 'login'])->middleware('guest');
 
-Route::post('logout', [authenticationController::class, 'logout'])->middleware('auth');
+Route::get('logout', [authenticationController::class, 'logout'])->middleware('auth');
+
+Route::get('test', function(){
+          return  response()->json(["data" => 'hello']);
+});
 
 
 

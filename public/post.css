@@ -1,0 +1,111 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+  }
+
+  .hero{
+    min-height: 90vh;
+    background-color:rgb(162, 255, 218) ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10vh;
+   
+
+  }
+
+  .hero .title h1{
+    font-family: 'Mochiy Pop One', sans-serif;
+    color: #0BAEEC;;
+
+  }
+
+
+  .postContent{
+    margin-top: 3rem;
+    width: 100%;
+    display: flex;
+  }
+
+  .postContent .postBody{
+    width: 60%;
+    
+    
+  }
+
+  .postContent .postBody p{
+    font-family: 'Mochiy Pop One', sans-serif;
+    font-size: 25px;
+    margin-top: 1rem;
+    margin-left: 5rem;
+    color: #222f3e;
+  }
+
+  .postContent .postImage{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+
+  .postContent .postImage img{
+    width: 400px;
+    height: 450px;
+    margin-bottom: 1rem;
+
+
+  }
+
+  .postContent .postImage a{
+    text-decoration: none;
+    color: white;
+  }
+
+  .postContent .postImage button{
+
+
+    width: 40%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    border-radius: 5px;
+    
+    cursor: pointer;
+
+    letter-spacing: 5px;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease; 
+    color: white;
+    font-family: 'Mochiy Pop One', sans-serif;
+
+  }
+
+  .postContent .postImage .update{
+    background-color: #0abde3;
+    border: 2px solid #0abde3;
+  }
+
+  .postContent .postImage .delete{
+    background-color: #ee5253;
+    border: 2px solid #ee5253;
+  }
+
+  .postContent .postImage .update:hover {
+    background-color: #48dbfb;
+    border: 2px solid #48dbfb;
+    letter-spacing: 10px;
+  }
+
+  .postContent .postImage .delete:hover {
+    background-color: #ff6b6b;
+    border: 2px solid #ff6b6b;
+    letter-spacing: 10px;
+  }
+
+
+ 

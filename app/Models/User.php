@@ -23,6 +23,11 @@ class User extends Authenticatable
         'password',
     ];
 
+    protected $dates = [
+        'created_at',
+        'updated_at',
+    ];
+
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -44,6 +49,19 @@ class User extends Authenticatable
 
     public function setPasswordAttribute($password)
     {
+        dd("test");
         $this->attributes['password'] = bcrypt($password);
     }
+
+    public function posts(){
+        return $this->hasMany(Post::class);
+    }
+
+    public function getCreatedAtAttribute($date)
+    {
+       
+        dd("dddd");
+        return $this->created_at->format('d-m-Y');
+    }
+
 }

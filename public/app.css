@@ -5,32 +5,31 @@
   }
 
   .hero{
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    background-color: rgb(199, 174, 158);;
-  }
-  .hero form{
+    height: 90vh;
+    background-color:rgb(162, 255, 218) ;
     display: flex;
     flex-direction: column;
-    align-content: center;
-    width: 50%;
-
+    align-items: center;
+  }
+  .hero table, th, td {
+    border: 1px solid;
+    color: white;
+    
+  }
+  .hero th, td {
+    text-align: center
   }
 
-  .hero button{
-    margin-left: 25%;
-    width: 30%;
-    height: 3%;
-    margin-top: 20px;
-    padding: 10px 30px; 
-    border-radius: 20px;
-    background-color: #fff;
-    color: rgb(100, 100, 100);
-    font-size: 20px;
+  .hero .link{
     text-decoration: none;
-    font-weight: bold;
+    color: white;
+  }
 
-    cursor: pointer;
-    border: none;
+  
+  .hero table {
+    margin-top: 5vh;
+    width: 95%;
+    background-color:#0BAEEC;
+    font-size: 25px;
+    
   }

@@ -11,7 +11,7 @@ class authenticationController extends Controller
 
 {
     function register(Request $request){
-       
+        
         $attributes = request()->validate([
             'name' => 'required',
             'email' => 'required|email|max:255|unique:users,email',
@@ -26,26 +26,33 @@ class authenticationController extends Controller
     }
 
     function login(Request $request){
+         
+        
+
 
         $attributes = request()->validate([
             'email' => 'required|email',
             'password' => 'required'
         ]);
 
+         
+
         if(Auth::attempt(['email' => $request->email, 'password' => $request->password])){ 
             $user = User::where('email', $request->email)->first(); 
             $user['token'] =  $user->createToken('blog')->plainTextToken; 
-   
+            //dd(auth()->user());
+            
             return response()->json(['user' => $user], 200);
         } 
         else{ 
+ 
             return response()->json('Unauthorised.', ['error'=>'Unauthorised']);
         } 
     }
 
     function logout(){
         auth()->logout();
-        return response()->json("loged out");;
+        return response()->json("ok");;
 
     }
 }

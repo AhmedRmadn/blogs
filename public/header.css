@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Poppins:wght@200&family=Roboto:wght@300&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+  }
+  .header{
+    height: 10vh;
+    width: 100vw;
+    background-color: rgb(0, 206, 124);
+    
+  }
+
+
+
+.header .right .content{
+    border: none;
+    display: flex;
+    justify-content: flex-end;
+    width: 100vw;
+}
+  
+
+  .header .right a{
+    font-family: 'Mochiy Pop One', sans-serif;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    margin-left: 25px;
+    margin-right: 30px;
+    margin-top: 3vh;
+   
+  }

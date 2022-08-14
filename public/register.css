@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Poppins:wght@200&family=Roboto:wght@300&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+  }
+  
+  body {
+    box-sizing: border-box;
+  }
+  .hero{
+    height: 90vh;
+    background-color:rgb(162, 255, 218) ;
+    padding: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .subHero{
+    /* margin-top: 7.5%; */
+    height: 85vh;
+    width: 65vw;
+    background-color:#0BAEEC ;
+    display: flex;
+  }
+  .left{
+    height: 100%;
+    width: 40%;
+    background-color:#0BAEEC ;
+ 
+  }
+  .right{
+   
+    height: 100%;
+    width: 60%;
+    background-color:(249, 199, 194) ;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .right h2{
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    font-family: 'Mochiy Pop One', sans-serif;
+    margin-left: 15px;
+
+  }
+
+
+  .right form{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .right .title{
+    width: 85%;
+    line-height: 30%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    margin-bottom: 1rem;
+  }
+  .right .content{
+    width: 85%;
+    height: 17rem;
+    padding: 2px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize:none;
+    margin-bottom: 2rem;
+  }
+
+   .image{
+    margin-top: 1rem;
+    color: aqua;
+    width: 85%;
+    padding: 2px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace;
+    resize:none;
+    margin-bottom: 2rem;
+  }
+
+  /* .image::file-selector-button{
+    margin-right: 1rem;
+    font-weight: bold;
+    color: dodgerblue;
+    padding: 0.5em;
+    border: thin solid grey;
+    border-radius: 3px;
+
+  } */
+
+  .loginForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+  }
+
+
+  .loginForm input{
+     width: 80%;
+     padding: 1.2rem;
+     margin-bottom: 1rem;
+     border-radius: 5px;
+     border: none;
+     cursor: pointer;
+     outline: none;
+     font-size: 15PX;
+  }
+
+  .loginForm label{
+    display: flex;
+    align-self: flex-start;
+    margin-left: 3rem;
+    margin-bottom: 0.5rem;
+    font-size: 13PX;
+    color: gainsboro;
+    font-family: 'Mochiy Pop One', sans-serif; 
+ }
+
+  .loginForm button{
+    background-color: rgb(0, 206, 124);
+    width: 80%;
+    padding: 1.2rem;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    border-radius: 5px;
+    border: 2px solid rgb(0, 206, 124);
+    cursor: pointer;
+
+    letter-spacing: 5px;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease; 
+    color: white;
+    font-family: 'Mochiy Pop One', sans-serif;
+
+  }
+
+  .loginForm input:focus{
+    border: 2px solid rgb(0, 206, 124);
+    border-radius: 5px;
+  }
+
+  .loginForm button:hover {
+    background-color: rgb(0, 250, 124);
+    border: 2px solid rgb(0, 250, 124);;
+    letter-spacing: 15px;
+  }
+
+  .right img{
+    height: 100%;
+    width: 100%;
+  }
+
+  .left h2{
+    margin-top: 2rem;
+    margin-left: 2rem;
+    margin-bottom: 2.5rem;
+    font-family: 'Mochiy Pop One', sans-serif;
+    color: white;
+    font-size: 40px;
+   
+  }
+
+  .left h3{
+    font-family: 'Mochiy Pop One', sans-serif;
+    color: white;
+    font-size: 13px;
+    margin-left: 5rem;
+    margin-top: -1.5rem;
+  }
+  .left h3 a{
+    text-decoration: none;
+    color: rgb(255, 80, 80);
+  }
